@@ -47,9 +47,9 @@ export default function LandingPage(props) {
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
-              <h1 className={classes.title}>Less Choosing More Chewing.</h1>
+              <h1 className={classes.title}>The best dining requires the best data.</h1>
               <h4>
-              A data-driven way to bridge the gap between restaraunts and people with dietary preferences
+              A data-driven way to bridge the gap between restaraunts and people with dietary preferences.
               </h4>
               <br />
               <Button
