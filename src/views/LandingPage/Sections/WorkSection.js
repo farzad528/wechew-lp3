@@ -25,12 +25,10 @@ export default function WorkSection() {
     database
       .collection("contacts")
       .add({
-        name: name,
         email: email,
-        message: message,
       })
       .then(() => {
-        alert("Message has been submitted!");
+        alert("Thanks for joining the WeChew family!");
       })
       .catch((error) => {
         alert(error.message);
@@ -44,36 +42,25 @@ export default function WorkSection() {
     <div className={classes.section}>
       <GridContainer justify="center">
         <GridItem cs={12} sm={12} md={8}>
-          <h2 className={classes.title}>Work with us</h2>
+          <h2 className={classes.title}>Be the first to Chew with us!</h2>
           <h4 className={classes.description}>
-            Divide details about your product or agency work into parts. Write a
-            few lines about each one and contact us about any further
-            collaboration. We will responde get back to you in a couple of
-            hours.
+      WeChew is scheduled for Beta launch in Spring 2021. Signup below to get EXCLUSIVE access when we launch
           </h4>
           <form onSubmit={handleSubmit}>
             <GridContainer>
+            
               <GridItem xs={12} sm={12} md={6}>
-                <CustomInput
-                  onChange={(e) => setName(e.target.value)}
-                  labelText="Your Name"
-                  id="name"
-                  formControlProps={{
-                    fullWidth: true,
-                  }}
-                />
-              </GridItem>
-              <GridItem xs={12} sm={12} md={6}>
-                <CustomInput
+                <input style={{ width: '100%'}}
+                  value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  labelText="Your Email"
+                  placeholder="Your Email"
                   id="email"
                   formControlProps={{
                     fullWidth: true,
                   }}
                 />
               </GridItem>
-              <CustomInput
+              {/* <CustomInput
                 onChange={(e) => setMessage(e.target.value)}
                 labelText="Your Message"
                 id="message"
@@ -85,10 +72,10 @@ export default function WorkSection() {
                   multiline: true,
                   rows: 5,
                 }}
-              />
-              <GridItem xs={12} sm={12} md={4}>
-                <Button type="submit" color="primary">
-                  Send Message
+              /> */}
+              <GridItem xs={12} sm={12} md={6}>
+                <Button type="submit" color="primary"  style= {{ textAlign: 'center'}}>
+                  Join the Waitlist!
                 </Button>
               </GridItem>
             </GridContainer>

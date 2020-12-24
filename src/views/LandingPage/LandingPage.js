@@ -34,7 +34,7 @@ export default function LandingPage(props) {
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        brand="Material Kit React"
+        brand="WeChew"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -47,18 +47,15 @@ export default function LandingPage(props) {
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
-              <h1 className={classes.title}>Your Story Starts With Us.</h1>
+              <h1 className={classes.title}>Less Choosing More Chewing.</h1>
               <h4>
-                Every landing page needs a small description after the big bold
-                title, that{"'"}s why we added this text here. Add here all the
-                information that can make you or your product create the first
-                impression.
+              A data-driven way to bridge the gap between restaraunts and people with dietary preferences
               </h4>
               <br />
               <Button
                 color="danger"
                 size="lg"
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
+                href="https://www.youtube.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >

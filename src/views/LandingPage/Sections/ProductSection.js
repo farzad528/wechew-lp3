@@ -12,6 +12,7 @@ import GridItem from "components/Grid/GridItem.js";
 import InfoArea from "components/InfoArea/InfoArea.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/productStyle.js";
+import { AttachMoney, People, Restaurant, Search } from "@material-ui/icons";
 
 const useStyles = makeStyles(styles);
 
@@ -23,40 +24,45 @@ export default function ProductSection() {
         <GridItem xs={12} sm={12} md={8}>
           <h2 className={classes.title}>Let{"'"}s talk product</h2>
           <h5 className={classes.description}>
-            This is the paragraph where you can write more details about your
-            product. Keep you user engaged by providing meaningful information.
-            Remember that by this time, the user is curious, otherwise he wouldn
-            {"'"}t scroll to get here. Add a button if you want the user to see
-            more.
+          WeChew is an app that allows users to spend less time choosing and more time chewing.
           </h5>
         </GridItem>
       </GridContainer>
       <div>
         <GridContainer>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={3}>
             <InfoArea
-              title="Free Chat"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-              icon={Chat}
+              title="collaborate with others"
+              description="save time and find the best restaraunt match for your party"
+              icon={People}
               iconColor="info"
               vertical
             />
           </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={3}>
             <InfoArea
-              title="Verified Users"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-              icon={VerifiedUser}
-              iconColor="success"
+              title="discover places"
+              description="powerful search capabilities tailored to your tastebuds"
+              icon={Search}
+              iconColor="rose"
               vertical
             />
           </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={3}>
             <InfoArea
-              title="Fingerprint"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-              icon={Fingerprint}
-              iconColor="danger"
+              title="enjoy best foods"
+              description="get access to community ratings on every menu item"
+              icon={Restaurant}
+              iconColor="primary"
+              vertical
+            />
+          </GridItem>
+          <GridItem xs={12} sm={12} md={3}>
+            <InfoArea
+              title="earn rewards"
+              description="enjoy discounts on your WeChew favorites"
+              icon={AttachMoney}
+              iconColor="success"
               vertical
             />
           </GridItem>
