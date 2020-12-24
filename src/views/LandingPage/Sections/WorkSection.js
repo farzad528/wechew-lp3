@@ -20,6 +20,10 @@ export default function WorkSection() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const [loader, setLoader] = useState(false)
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     database
@@ -28,10 +32,12 @@ export default function WorkSection() {
         email: email,
       })
       .then(() => {
-        alert("Thanks for joining the WeChew family!");
+        alert("Thanks for joining the WeChew family! 👍");
+        setLoader(false);
       })
       .catch((error) => {
         alert(error.message);
+        setLoader(false);
       });
 
     setName("");
@@ -52,6 +58,7 @@ export default function WorkSection() {
               <GridItem xs={12} sm={12} md={6}>
                 <input style={{ width: '100%'}}
                   value={email}
+                  type="email"
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your Email"
                   id="email"
@@ -74,7 +81,7 @@ export default function WorkSection() {
                 }}
               /> */}
               <GridItem xs={12} sm={12} md={6}>
-                <Button type="submit" color="primary"  style= {{ textAlign: 'center'}}>
+                <Button type="submit" color="primary" disabled={!email}>
                   Join the Waitlist!
                 </Button>
               </GridItem>
