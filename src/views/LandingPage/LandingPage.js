@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
@@ -21,6 +21,7 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 import ProductSection from "./Sections/ProductSection.js";
 import TeamSection from "./Sections/TeamSection.js";
 import WorkSection from "./Sections/WorkSection.js";
+import { database } from "firebase.js";
 
 const dashboardRoutes = [];
 
@@ -29,6 +30,33 @@ const useStyles = makeStyles(styles);
 export default function LandingPage(props) {
   const classes = useStyles();
   const { ...rest } = props;
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [loader, setLoader] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    database
+      .collection("contacts")
+      .add({
+        email: email,
+      })
+      .then(() => {
+        alert("Thanks for joining the WeChew family! 👍");
+        setLoader(false);
+      })
+      .catch((error) => {
+        alert(error.message);
+        setLoader(false);
+      });
+
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
+
   return (
     <div>
       <Header
@@ -39,31 +67,46 @@ export default function LandingPage(props) {
         fixed
         changeColorOnScroll={{
           height: 400,
-          color: "white"
+          color: "white",
         }}
         {...rest}
       />
       <Parallax filter image={require("assets/img/landing-bg.jpg")}>
         <div className={classes.container}>
-          <GridContainer>
-            <GridItem xs={12} sm={12} md={6}>
-              <h1 className={classes.title}>The best dining requires the best data.</h1>
-              <h4>
-              A data-driven way to bridge the gap between restaraunts and people with dietary preferences.
-              </h4>
-              <br />
-              <Button
-                color="danger"
-                size="lg"
-                href="https://www.youtube.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fas fa-play" />
-                Watch video
-              </Button>
-            </GridItem>
-          </GridContainer>
+          <form onSubmit={handleSubmit}>
+            <GridContainer>
+              <GridItem xs={12} sm={12} md={6}>
+                <h1 className={classes.title}>
+                  The best dining requires the best data.
+                </h1>
+                <h4>
+                  A data-driven way to bridge the gap between restaraunts and
+                  people with dietary preferences.
+                </h4>
+                <br />
+                <input style={{ height: 40, borderRadius: 3 }}
+                  value={email}
+                  size="lg"
+                  type="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your Email"
+                  id="email"
+                  formControlProps={{
+                    fullWidth: true,
+                  }}
+                />
+                <Button
+                  color="danger"
+                  size="md"
+                  rel="noopener noreferrer"
+                  type="submit"
+                  disabled={!email}
+                >
+                  Join the Wailist!
+                </Button>
+              </GridItem>
+            </GridContainer>
+          </form>
         </div>
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>

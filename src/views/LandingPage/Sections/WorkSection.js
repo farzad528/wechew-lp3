@@ -48,42 +48,44 @@ export default function WorkSection() {
     <div className={classes.section}>
       <GridContainer justify="center">
         <GridItem cs={12} sm={12} md={8}>
-          <h2 className={classes.title}>Be the first to Chew with us!</h2>
+          <h2 className={classes.title}>Be the first to chew with us!</h2>
           <h4 className={classes.description}>
       WeChew is scheduled for Beta launch in Spring 2021. Signup below to get EXCLUSIVE access when we launch
           </h4>
           <form onSubmit={handleSubmit}>
-            <GridContainer>
-            
+          <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
-                <input style={{ width: '100%'}}
-                  value={email}
-                  type="email"
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your Email"
-                  id="email"
+                <CustomInput
+                  labelText="Your Name"
+                  id="name"
                   formControlProps={{
-                    fullWidth: true,
+                    fullWidth: true
                   }}
                 />
               </GridItem>
-              {/* <CustomInput
-                onChange={(e) => setMessage(e.target.value)}
+              <GridItem xs={12} sm={12} md={6}>
+                <CustomInput
+                  labelText="Your Email"
+                  id="email"
+                  formControlProps={{
+                    fullWidth: true
+                  }}
+                />
+              </GridItem>
+              <CustomInput
                 labelText="Your Message"
                 id="message"
                 formControlProps={{
                   fullWidth: true,
-                  className: classes.textArea,
+                  className: classes.textArea
                 }}
                 inputProps={{
                   multiline: true,
-                  rows: 5,
+                  rows: 5
                 }}
-              /> */}
-              <GridItem xs={12} sm={12} md={6}>
-                <Button type="submit" color="primary" disabled={!email}>
-                  Join the Waitlist!
-                </Button>
+              />
+              <GridItem xs={12} sm={12} md={4}>
+                <Button color="primary">Send Message</Button>
               </GridItem>
             </GridContainer>
           </form>
