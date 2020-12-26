@@ -44,7 +44,7 @@ export default function LandingPage(props) {
         email: email,
       })
       .then(() => {
-        alert("Thanks for joining the WeChew family! 👍");
+        alert("Thanks for joining the WeChew family! Check your inbox for  👍");
         setLoader(false);
       })
       .catch((error) => {
@@ -75,16 +75,14 @@ export default function LandingPage(props) {
         <div className={classes.container}>
           <form onSubmit={handleSubmit}>
             <GridContainer>
-              <GridItem xs={12} sm={12} md={6}>
+              <GridItem xs={12} sm={12} md={8}>
                 <h1 className={classes.title}>
-                  The best dining requires the best data.
+                  Spend less time choosing, more time chewing
                 </h1>
-                <h4>
-                  A data-driven way to bridge the gap between restaraunts and
-                  people with dietary preferences.
-                </h4>
+                <h4>a place where your tastebuds meet the best restaraunts</h4>
                 <br />
-                <input style={{ height: 40, borderRadius: 3 }}
+                <input
+                  style={{ width: 300, height: 40, borderRadius: 3 }}
                   value={email}
                   size="lg"
                   type="email"
@@ -102,7 +100,7 @@ export default function LandingPage(props) {
                   type="submit"
                   disabled={!email}
                 >
-                  Join the Wailist!
+                  JOIN WAITLIST
                 </Button>
               </GridItem>
             </GridContainer>
@@ -113,7 +111,7 @@ export default function LandingPage(props) {
         <div className={classes.container}>
           <ProductSection />
           <TeamSection />
-          <WorkSection />
+          {/* <WorkSection /> */}
         </div>
       </div>
       <Footer />
