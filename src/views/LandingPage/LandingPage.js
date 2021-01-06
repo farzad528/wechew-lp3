@@ -22,6 +22,7 @@ import ProductSection from "./Sections/ProductSection.js";
 import TeamSection from "./Sections/TeamSection.js";
 import WorkSection from "./Sections/WorkSection.js";
 import { database } from "firebase.js";
+import SectionCarousel from "views/Components/Sections/SectionCarousel.js";
 
 const dashboardRoutes = [];
 
@@ -44,7 +45,7 @@ export default function LandingPage(props) {
         email: email,
       })
       .then(() => {
-        alert("Thanks for joining the WeChew family! Check your inbox for  👍");
+        alert("Thanks we'll be in touch! 👍");
         setLoader(false);
       })
       .catch((error) => {
@@ -109,6 +110,7 @@ export default function LandingPage(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
+          <SectionCarousel />
           <ProductSection />
           <TeamSection />
           {/* <WorkSection /> */}
