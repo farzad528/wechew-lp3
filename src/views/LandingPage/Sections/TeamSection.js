@@ -16,9 +16,9 @@ import CardFooter from "components/Card/CardFooter.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
 
-import team1 from "assets/img/faces/blank.jpg";
-import team2 from "assets/img/faces/natalia.jpg";
-import team3 from "assets/img/faces/kendall.jpg";
+import team1 from "assets/img/faces/bahrom.jpg";
+import team2 from "assets/img/faces/fram.jpg";
+import team3 from "assets/img/faces/dana.jpg";
 
 const useStyles = makeStyles(styles);
 
@@ -46,7 +46,7 @@ export default function TeamSection() {
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  <i>"Great and fun way to swipe through restaraunts with my coworkers to pick where we eat for lunch"</i>
+                  <i>"Great and fun way to swipe through restaraunts with my coworkers to pick where we eat for lunch!"</i>
                 </p>
               </CardBody>
             </Card>
@@ -54,7 +54,7 @@ export default function TeamSection() {
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={team1} alt="..." className={imageClasses} />
+                <img src={team2} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Fram H
@@ -71,7 +71,7 @@ export default function TeamSection() {
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={team1} alt="..." className={imageClasses} />
+                <img src={team3} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Dana F
