@@ -46,7 +46,7 @@ export default function TeamSection() {
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  <i>"Great and fun way to swipe through restaraunts with my coworkers to pick where we eat for lunch!"</i>
+                  <i>"Creative and fun way to swipe through restaraunts with my coworkers to pick where we eat for lunch!"</i>
                 </p>
               </CardBody>
             </Card>
@@ -81,9 +81,7 @@ export default function TeamSection() {
               <CardBody>
                 <p className={classes.description}>
                   <i>
-                    "WeChew helps me be more inclusive and make sure that
-                    everyone has a pleasant dining experience independent of
-                    dietary restrictions. This is a win-win for all!"
+                    "WeChew gives my friend and me a 'win-win' dining expedrience as all of us get to voice our dietary preferences before choosing where to eat"
                   </i>
                 </p>
               </CardBody>

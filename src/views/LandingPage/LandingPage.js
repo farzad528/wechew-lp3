@@ -110,7 +110,7 @@ export default function LandingPage(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <SectionCarousel />
+          {/* <SectionCarousel /> */}
           <ProductSection />
           <TeamSection />
           {/* <WorkSection /> */}
